@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Produtos</title>
+</head>
+<body>
+    <table id="tabela">
+        <thead style="width: 1000px;">
+            <tr">
+                <th>ID</th>
+                <th>Nome do Produto</th>
+                <th>Estoque</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+            <!-- Dados da tabela serão inseridos aqui -->
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Função para formatar o preço
+        function formatarPreco(preco) {
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(preco);
+        }
+
+        // Fazendo requisição para a API e populando a tabela
+        axios.get('http://localhost:3001/products/list')
+            .then(response => {
+                const corpoTabela = document.getElementById('corpo-tabela');
+                const data = response.data;
+
+                data.forEach(item => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${item._id}</td>
+                        <td>${item.product_name}</td>
+                        <td>${item.product_stock}</td>
+                        <td>${item.product_category}</td>
+                        <td>${formatarPreco(item.product_price)}</td>
+                    `;
+                    corpoTabela.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Erro ao obter dados da API:', error));
+    </script>
+</body>
+</html>
