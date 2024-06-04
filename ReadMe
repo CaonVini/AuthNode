@@ -1,13 +1,1 @@
- F - Registro de Produtos: Capacidade de adicionar informações básicas sobre os produtos em estoque, como nome, descrição, preço unitário e quantidade inicial.
 
- F - Atualização Automática de Estoques: Atualização automática dos níveis de estoque com base nas transações de entrada e saída registradas.
-
-Alertas de Estoque Baixo: Capacidade de definir alertas automáticos para produtos que atingem níveis mínimos, para evitar falta de estoque.
-
-Geração de Relatórios Básicos: Capacidade de gerar relatórios simples sobre o status atual do estoque, como quantidades disponíveis de produtos e histórico de movimentações.
-
-Organização por Categorias: Capacidade de organizar produtos em categorias básicas para facilitar a busca e a análise.
-
-Interface Amigável: Uma interface fácil de usar e intuitiva, para que os usuários possam navegar e realizar tarefas facilmente, mesmo sem muita experiência técnica.
-
-Backup e Segurança: Funcionalidade para fazer backup dos dados do estoque regularmente e medidas básicas de segurança para proteger as informações.
